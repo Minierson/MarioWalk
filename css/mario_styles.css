@@ -1,0 +1,97 @@
+/* plansza początkowa*/
+.container{
+  border: 1px black solid;
+  height: 400px;
+  width: 400px;
+  position: relative;
+  perspective: 500px;
+  margin: auto;
+}
+#first-board{
+  text-align: center;
+  background-color: rgba(0,0,10,0.8);
+  height: 400px;
+  width: 400px;
+  position: absolute;
+  color: white;
+  /*display: none;*/
+  z-index: 2;
+}
+#text{
+  position:absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+}
+input{
+  height: 50px;
+  width: 200px;
+  font-size: 24px;
+  background-image: linear-gradient(45deg, gold 1%, white 40%,white 60%, gold 100%);
+}
+/*opis sceny*/
+.stage{
+  transform-style: preserve-3d;
+  width: 100%;
+  height: 100%;
+  border: 1px solid black;
+  display: "none";
+ z-index: 1;
+}
+.stage div:nth-child(1){
+  position:absolute;
+  width: 400px;
+  height: 100%;
+  background-image: linear-gradient(90deg,black 1%, #aa6606 5%,#aa6b11 32%, #593502 40%, #845005 50%, #845005 95%, black 95%);
+  /*background-repeat: no-repeat;*/
+  background-size: 30px 100%;
+  transform: rotateX(90deg) translateZ(-120px);
+}
+.stage div:nth-child(2){
+  position:absolute;
+  width: 400px;
+  height: 80%;
+  background-color: #d6d1cb;
+  transform: translateZ(-200px);
+}
+.stage div:nth-child(3){
+  position:absolute;
+  width: 400px;
+  height: 80%;
+  background-color: #d6d1cb;
+  transform: rotateY(-90deg) translateZ(-200px);
+}
+.stage div:nth-child(4){
+  position:absolute;
+  width: 400px;
+  height: 80%;
+  background-color: #d6d1cb;
+  transform: rotateY(90deg) translateZ(-200px);
+}
+.stage div:nth-child(5){
+  position:absolute;
+  width: 400px;
+  height: 100%;
+  background-color: #fffefc;
+  transform: rotateX(90deg) translateZ(150px);
+}
+/* animacja i umiejscowienie mario*/
+#mario{
+    display: none;
+    height: 36px;
+    width: 26px;
+    position: absolute;
+    background-image: url('../mario_208x140.png');
+    background-position-y: 0px;
+    transform: scale(1.5);
+    animation-name: '';
+    animation-iteration-count: infinite;
+    animation-duration: 1s;
+    animation-timing-function: steps(8);
+    /*animation: mario-walk 1s steps(8) infinite;*/
+    
+}
+@keyframes mario-walk{
+    100% {background-position-x: -208px;}
+}
